@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results</h1>
+        <a href="/">Back to Search</a>
+        <div class="results">
+            {% for name, price, description, image in products %}
+            <div class="product">
+                <img src="{{ image }}" alt="Product Image">
+                <h2>{{ name }}</h2>
+                <p>Price: {{ price }}</p>
+                <p>Description: {{ description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
