@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Flipkart Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Search Results</h1>
-        <a href="/">Back to Search</a>
+        <div class="header">
+            <h1>Search Results</h1>
+            <a href="/" class="btn">New Search</a>
+        </div>
         <div class="results">
             {% for name, price, description, image in products %}
             <div class="product">
-                <img src="{{ image }}" alt="Product Image">
+                <img src="{{ image }}" alt="{{ name }}">
                 <h2>{{ name }}</h2>
-                <p>Price: {{ price }}</p>
-                <p>Description: {{ description }}</p>
+                <div class="price">{{ price }}</div>
+                <div class="description">{{ description }}</div>
             </div>
             {% endfor %}
         </div>

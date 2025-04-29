@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Search</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Flipkart Product Scraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Flipkart Product Search</h1>
-        <form action="/search" method="post">
-            <input type="text" name="query" placeholder="Enter product name..." required>
-            <button type="submit">Search</button>
-        </form>
+        <div class="search-container">
+            <div class="logo">
+                <!-- Remove the broken image and style the title properly -->
+                <h1>Flipkart <span>Product Scraper</span></h1>
+            </div>
+            <form action="/search" method="POST" class="search-form">
+                <div class="search-box">
+                    <input type="text" name="query" placeholder="Search for products..." required>
+                    <button type="submit" class="search-btn">Search</button>
+                </div>
+                <p class="search-hint">Enter product name, brand, or category</p>
+            </form>
+        </div>
     </div>
 </body>
 </html>

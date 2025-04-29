@@ -77,7 +77,7 @@ def search():
             return render_template('error.html', message="No products found for the given query.")
 
         # Combine the product details into a single list
-        
+        products = list(zip(product_names, prices, descriptions, image_links))
 
         # Render the results page
         return render_template('results.html', products=products)
